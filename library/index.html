@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>My library</title>
+</head>
+<body>
+    <h1>Library</h1>
+    <div>
+        <h2>Add a book here.</h2>
+        <div>
+        <label for="booktitle">Enter the book title:</label>
+        <input type="text" name="booktitle" id="booktitle">
+        </div>
+        <div>
+        <label for="author">Enter the authors name: </label>
+        <input type="text" name="author" id="author">
+        </div>
+        <div>
+        <label for="pagecount">Enter the number of pages:</label>
+        <input type="number" id="pagecount">
+        </div>
+        <div>
+            <input type="radio" id="read" name="hasbeenread" value="read">
+            <label for="read">Read</label>
+        </div>
+          
+        <div>
+            <input type="radio" id="unread" name="hasbeenread" value="unread">
+            <label for="unread">Unread</label>
+        </div>
+
+        <button class="addbook-btn" id="addbook-btn">Add Book</button>
+      </div>
+      <div>
+        <button class="display-books">Display Books</button>
+      </div>
+    
+      
+      <div class="books">
+        <table style="overflow-x:auto;" id="books">
+            <caption>Books in the library</caption>
+            <thead>  
+            <tr>
+                <th scope="col">Book Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Page count</th>
+                <th scope="col">Read y/n</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>
