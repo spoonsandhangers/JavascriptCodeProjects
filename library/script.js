@@ -1,3 +1,5 @@
+// https://www.theodinproject.com/lessons/node-path-javascript-library
+
 // empty library array
 let myLibrary = [];
 
@@ -14,8 +16,13 @@ function Book(title, author,pagecount,read) {
 }
 
 // book prototype with unused method
-Book.prototype.libraryPosition = function() {
-    return this.id;
+Book.prototype.readStatus = function() {
+    if (this.read === "read") {
+        this.read = "unread";
+    } else {
+        this.read = "read";
+    };
+    displaybooks();
 };
 
 // 2 buttons and their event listeners.
@@ -96,6 +103,18 @@ function addListenersDelete(){
     }
 }
 
+// adds a listener to the buttons that toggle
+// the read and unread status of each book.
+function addlistenersRead() {
+    for (let i=0; i < myLibrary.length; i++){
+        if (document.getElementById(`${myLibrary[i].id}-read`) !== null){
+        document.getElementById(`${myLibrary[i].id}-read`).addEventListener('click', function(){
+            myLibrary[i].readStatus();
+        })
+    }
+    }
+}
+
 // displays all the book objects in the array
 // in a table on the weboage.
 function displaybooks() {
@@ -109,21 +128,27 @@ function displaybooks() {
     
     for (var i =0; i < myLibrary.length; i++) {
         var row = booktable.insertRow(rowCount);
-        var delbtn = `<button id="${myLibrary[i].id}">Delete</button>`   
+        var delbtn = `<button id="${myLibrary[i].id}">Delete</button>`  
+        var readbtn = `<button id="${myLibrary[i].id}-read">read/unread</button>` 
 
         var cell0 = row.insertCell(0);
         var cell1 = row.insertCell(1);
         var cell2 = row.insertCell(2);
         var cell3 = row.insertCell(3);
         var cell4 = row.insertCell(4);
+        var cell5 = row.insertCell(5)
 
         cell0.innerHTML = myLibrary[i].title;
         cell1.innerHTML = myLibrary[i].author;
         cell2.innerHTML = myLibrary[i].pagecount;
         cell3.innerHTML = myLibrary[i].read;
-        cell4.innerHTML = delbtn
+        cell4.innerHTML = readbtn;
+        cell5.innerHTML = delbtn;
 
         rowCount++;
     }
+    // calls the functions that add the event listeners
+    // to the table buttons.
     addListenersDelete();
+    addlistenersRead(); 
 }
