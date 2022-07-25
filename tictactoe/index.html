@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>TicTacToe</title>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="container">
+        <div class="item" id="left"></div>
+        
+        
+        <div class="item first-row" id="1">1</div>
+        <div class="item first-row" id="2">1</div>
+        <div class="item first-row last-column" id="3">3</div>
+
+        <div class="item" id="4">4</div>
+        <div class="item" id="5">5</div>
+        <div class="item last-column" id="6">6</div>
+
+        <div class="item" id="7">7</div>
+        <div class="item" id="8">8</div>
+        <div class="item last-column" id="9">9</div>
+        <div class="item" id="right"></div>
+        
+        
+      </div>
+
+      <div class="container-gamecontrols">
+        <div id="top"></div>
+        <div id="player1-details">
+            <label for="player1name">Enter your name player1:</label>
+            <input type="text" name="player1name" id="player1name">
+        </div>
+        <div id="player2-details">
+            <label for="player2name">Enter your name player2:</label>
+            <input type="text" name="player2name" id="player2name">
+        </div>
+        <div id="startgame">
+            <button id="start" onclick="startGame()">Start Game</button>
+        </div>
+        <div id="bottom"></div>
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>
